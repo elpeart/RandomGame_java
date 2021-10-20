@@ -2,10 +2,13 @@ import java.util.Scanner;
 
 public class GetInput {
 	int guess;
+	Scanner obj = new Scanner(System.in);
 	public GetInput() {
-		//guess = 3;
-		Scanner obj = new Scanner(System.in);
-		guess = obj.nextInt();
+		try {
+			guess = obj.nextInt();
+		} catch (Exception e) {
+			guess = 101;
+		}
 	}
 
 }
