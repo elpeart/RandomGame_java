@@ -1,8 +1,4 @@
 public class RandomGame {
-	static boolean checkResult(int fguess, int fNumber) {
-		return fguess == fNumber;
-	}
-	
 	public static void main(String[] args) {
 		int randomNumber = (int) (Math.random() * 101);
 		int numGuesses = 0;
@@ -13,11 +9,15 @@ public class RandomGame {
 			System.out.println("Enter your guess: ");
 			GetInput userGuess = new GetInput();
 			// check if correct
-			correct = checkResult(userGuess.guess, randomNumber);
+			correct = userGuess.guess == randomNumber;
 			if (correct) {
 				System.out.println("You win!");
 			} else if (numGuesses < 100) {
-				System.out.println("Try Again");
+				if (userGuess.guess > randomNumber) {
+					System.out.println("Too high");
+				} else {
+					System.out.println("Too low");
+				}
 			} else {
 				System.out.println("You lose!");
 				break;
