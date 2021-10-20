@@ -11,9 +11,9 @@ public class RandomGame {
 			numGuesses++;
 			// get user input
 			System.out.println("Enter your guess: ");
-			int guess = 3;
+			GetInput userGuess = new GetInput();
 			// check if correct
-			correct = checkResult(guess, randomNumber);
+			correct = checkResult(userGuess.guess, randomNumber);
 			if (correct) {
 				System.out.println("You win!");
 			} else if (numGuesses < 100) {
