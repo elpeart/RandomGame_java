@@ -7,4 +7,5 @@ Once the user reaches 50 attempts, the program prints "You lose!" and exits.
 RandomTester.java tests a guessing strategy and records results.
 In this strategy, the user begins with a floor of 0 and a ceiling of 100 for the correct number.  The strategy is to guess the average of the floor and ceiling and update the floor or ceiling after each guess.
 The program loops guessing the average of the floor and ceiling and updating the floor or ceiling with each guess until the correct number is guessed.  The only problem with this strategy is that Java always rounds down when performing integer division, so if the correct number is 100, that strategy by itself would have the program guess 99 until it loses. To handle this, the program guesses 100 instead (floor + ceiling) / 2 if the floor is 99..
-
+The RandomTester program plays this game 100 times and stores the number of guesses it took to win each time to write to a csv file.
+TesterPlot.py reads the csv file of results into a numpy array and plots a histogram of the results.
